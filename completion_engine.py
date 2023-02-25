@@ -4,7 +4,7 @@ class CompletionEngine:
     def __init__(self, apikey):
         self.apikey = apikey
 
-    def complete(prompt, temperature):
+    def complete(self, prompt, temperature):
         openai.api_key = self.apikey
         response = openai.Completion.create(
             model="text-davinci-003",
