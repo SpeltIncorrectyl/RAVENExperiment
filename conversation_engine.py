@@ -5,10 +5,9 @@ class ConversationEngine:
         self.messages = [role_primer]
     
     def speak(self, message):
-        role_message = {"role" : "user", "content" : message}
-        self.messages.append(role_message)
+        self.messages.append(message)
 
-    def respond(self, _context):
-        response = self.chat_engine.chat(self.messages)
+    def respond(self, context):
+        response = self.chat_engine.chat(context + self.messages)
         self.messages.append(response)
-        return response.content
+        return response
