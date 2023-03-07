@@ -1,4 +1,4 @@
-from completion_engine import CompletionEngine
+from chat_engine import ChatEngine
 from conversation_engine import ConversationEngine
 from outer_loop import OuterLoop
 
@@ -10,8 +10,8 @@ prompt = ""
 with open("conversation.prompt") as prompt_file:
     prompt = prompt_file.read()
 
-completition_engine = CompletionEngine(apikey)
-conversation_engine = ConversationEngine(completition_engine, prompt)
+chat_engine = ChatEngine(apikey)
+conversation_engine = ConversationEngine(chat_engine, prompt)
 outer_loop = OuterLoop(conversation_engine)
 
 while True:
